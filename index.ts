@@ -1,6 +1,8 @@
 import DiscordJS, { Intents, Interaction } from 'discord.js'
+import WOKCommands from 'wokcommands'
+import path from 'path'
+// import { resolve } from 'path/posix'
 import dotenv from 'dotenv'
-import { resolve } from 'path/posix'
 dotenv.config()
 
 const client = new DiscordJS.Client({
@@ -13,67 +15,40 @@ const client = new DiscordJS.Client({
 client.on('ready', () => {
     console.log('Ro is online!')
 
-    const guildID = '874715472736682064'
-    const guild = client.guilds.cache.get(guildID)
-    let commands
-
-    if(guild){
-        commands = guild.commands
-    } else {
-        commands = client.application?.commands
-    }
-
-    commands?.create({
-        name: 'ping',
-        description: 'Replies with pong.',
+    new WOKCommands(client, {
+        commandDir: path.join(__dirname, 'commands'),
+        typeScript: true,
+        testServers: ['874715472736682064']
     })
 
-    commands?.create({
-        name: 'add',
-        description: 'Adds two numbers.',
-        options: [
-            {
-            name: 'num1',
-            description: 'The first number.',
-            required: true,
-            type: DiscordJS.Constants.ApplicationCommandOptionTypes.NUMBER
-        },
-        {
-            name: 'num2',
-            description: 'The second number.',
-            required: true,
-            type: DiscordJS.Constants.ApplicationCommandOptionTypes.NUMBER
-        }
-    ]
-    })
 })
 
-client.on('interactionCreate', async (interaction) =>{
-    if(!interaction.isCommand()) {
-        return
-    }
+// client.on('interactionCreate', async (interaction) =>{
+//     if(!interaction.isCommand()) {
+//         return
+//     }
 
-    const {commandName, options} = interaction
+//     const {commandName, options} = interaction
 
-    if (commandName === 'ping') {
-        interaction.reply({
-            content: 'pong',
-            ephemeral: true
-        })
-    } else if(commandName === 'add') {
-        const num1 = options.getNumber('num1')!
-        const num2 = options.getNumber('num2')!
+//     if (commandName === 'ping') {
+//         interaction.reply({
+//             content: 'pong',
+//             ephemeral: true
+//         })
+//     } else if(commandName === 'add') {
+//         const num1 = options.getNumber('num1')!
+//         const num2 = options.getNumber('num2')!
 
-        await interaction.deferReply({
-            ephemeral: true,
-        })
-        await new Promise((resolve) => setTimeout(resolve, 4000))
+//         await interaction.deferReply({
+//             ephemeral: true,
+//         })
+//         await new Promise((resolve) => setTimeout(resolve, 4000))
 
-        interaction.editReply({
-            content: `${num1} + ${num2} = ${num1 + num2}`,
-        })
-    }
-})
+//         interaction.editReply({
+//             content: `${num1} + ${num2} = ${num1 + num2}`,
+//         })
+//     }
+// })
 
 
 

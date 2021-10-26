@@ -15,7 +15,13 @@
     "dotenv": "^10.0.0",
     "node": "^17.0.1",
     "nodemon": "^2.0.14",
+    "ro": "github:AlAgilly/Ro",
     "ts-node": "^10.4.0",
-    "typescript": "^4.4.4"
+    "typescript": "^4.4.4",
+    "wokcommands": "^1.5.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlAgilly/Ro.git"
   }
 }
