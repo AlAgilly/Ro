@@ -23,33 +23,4 @@ client.on('ready', () => {
 
 })
 
-// client.on('interactionCreate', async (interaction) =>{
-//     if(!interaction.isCommand()) {
-//         return
-//     }
-
-//     const {commandName, options} = interaction
-
-//     if (commandName === 'ping') {
-//         interaction.reply({
-//             content: 'pong',
-//             ephemeral: true
-//         })
-//     } else if(commandName === 'add') {
-//         const num1 = options.getNumber('num1')!
-//         const num2 = options.getNumber('num2')!
-
-//         await interaction.deferReply({
-//             ephemeral: true,
-//         })
-//         await new Promise((resolve) => setTimeout(resolve, 4000))
-
-//         interaction.editReply({
-//             content: `${num1} + ${num2} = ${num1 + num2}`,
-//         })
-//     }
-// })
-
-
-
 client.login(process.env.TOKEN)
