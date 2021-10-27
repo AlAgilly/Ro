@@ -1,7 +1,6 @@
 import DiscordJS, { Intents, Interaction } from 'discord.js'
 import WOKCommands from 'wokcommands'
 import path from 'path'
-// import { resolve } from 'path/posix'
 import dotenv from 'dotenv'
 dotenv.config()
 

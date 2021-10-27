@@ -1,4 +1,5 @@
-import { Interaction, MessageActionRow, MessageButton } from "discord.js";
+import { ButtonInteraction, Interaction, Message, MessageActionRow, MessageButton } from "discord.js";
+import { execPath } from "process";
 import { ICommand } from "wokcommands";
 
 export default {
@@ -39,6 +40,9 @@ export default {
         })
 
         collector.on('end', async (collection) => {
+            collection.forEach((click) => {
+                console.log(click.user.id, click.customId)
+            })
 
             if(collection.first()?.customId === 'ban_yes') {
                 await msgInt.editReply({
