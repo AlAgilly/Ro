@@ -5,6 +5,8 @@ import path from 'path'
 import dotenv from 'dotenv'
 dotenv.config()
 
+//Testing git connection
+
 const client = new DiscordJS.Client({
     intents: [
         Intents.FLAGS.GUILDS,
