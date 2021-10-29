@@ -1,8 +1,9 @@
+// import { resolve } from 'path/posix';
 import { ICommand } from 'wokcommands'
 export default {
     name: 'add',
     category: 'Math',
-    description: 'Adds two numbers.',
+    description: '➕ Adds two numbers.',
     expectedArgs: '<number1> <number2>',
     minArgs: 2,
     maxArgs: 2,
@@ -14,7 +15,7 @@ export default {
         const number2 = parseInt(args[1])
         
         const sum = number1 + number2;
-                
-        return `${number1} + ${number2} = ${sum}`
+        
+        return `${number1} + ${number2} = **${sum}**`
     }
 } as ICommand
