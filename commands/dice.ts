@@ -6,24 +6,24 @@ export default {
     testOnly: true,
     slash: true,
     
-    callback: ({ args }) => {
+    callback: ({ }) => {
                  
         const rndInt = Math.floor(Math.random() * (6 - 1 + 1) + 1)      
         
-        let coin = ''
+        let dice = ''
         if ( rndInt == 1 ){
-            coin = 'one'
+            dice = 'one'
         } else if ( rndInt == 2 ) {
-            coin = 'two'
+            dice = 'two'
         } else if ( rndInt == 3 ) {
-            coin = 'three'
+            dice = 'three'
         } else if ( rndInt == 4 ) {
-            coin = 'four'
+            dice = 'four'
         } else if ( rndInt == 5 ) {
-            coin = 'five'
+            dice = 'five'
         } else if ( rndInt == 6 ) {
-            coin = 'six'
+            dice = 'six'
         }
-        return `${coin}`
+        return `${dice}`
     }
 } as ICommand
