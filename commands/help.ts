@@ -1,24 +1,23 @@
 import { MessageActionRow, MessageButton } from "discord.js";
-import { execPath } from "process";
 import { ICommand } from "wokcommands";
 
 export default {
+    name:'help',
     category: 'Testing',
-    description: 'Link to Ro\'s command list and help.',
-    slash: 'both',
+    description: 'Replies with pong.',
+    slash: true,
     testOnly: true,
-    callback: ({interaction: msgInt}) => {
-        const link = new MessageActionRow()
+    callback: ({ interaction: msgInt }) => {
+        const helplink = new MessageActionRow()
             .addComponents(
                 new MessageButton()
-                    .setURL('https://alagilly.dev/ro')
-                    .setLabel('Ro Commands')
+                    .setLabel('Ro\'s Documentation')
                     .setStyle('LINK')
+                    .setURL('https://alagilly.dev/')
             )
+
         msgInt.reply({
-            content: 'Here is a link to all my commands',
-            components: [link],
-            // ephemeral:true
+            content: ''
         })
     }
 } as ICommand
