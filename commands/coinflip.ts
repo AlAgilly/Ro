@@ -2,11 +2,11 @@ import { ICommand } from 'wokcommands'
 export default {
     name: 'coinflip',
     category: 'Random',
-    description: 'Flips a coin.',
+    description: '📀 Flips a coin.',
     testOnly: true,
     slash: true,
     
-    callback: ({ args }) => {
+    callback: ({ }) => {
                  
         const rndInt = Math.floor(Math.random() * (3 - 2 + 1) + 1)      
         

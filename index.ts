@@ -1,4 +1,4 @@
-import DiscordJS, { Intents, Interaction } from 'discord.js'
+import DiscordJS, { Intents } from 'discord.js'
 import WOKCommands from 'wokcommands'
 import path from 'path'
 import dotenv from 'dotenv'
@@ -7,7 +7,8 @@ dotenv.config()
 const client = new DiscordJS.Client({
     intents: [
         Intents.FLAGS.GUILDS,
-        Intents.FLAGS.GUILD_MESSAGES
+        Intents.FLAGS.GUILD_MESSAGES,
+        Intents.FLAGS.DIRECT_MESSAGE_REACTIONS
     ]
 })
 
@@ -16,6 +17,7 @@ client.on('ready', () => {
 
     new WOKCommands(client, {
         commandDir: path.join(__dirname, 'commands'),
+        featureDir: path.join(__dirname, 'features'),
         typeScript: true,
         testServers: ['874715472736682064']
     })

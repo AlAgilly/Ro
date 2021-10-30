@@ -2,7 +2,7 @@ import { ICommand } from 'wokcommands'
 export default {
     name: 'subtract',
     category: 'Math',
-    description: 'Subtracts two numbers.',
+    description: '➖ Subtracts two numbers.',
     expectedArgs: '<number1> <number2>',
     minArgs: 2,
     maxArgs: 2,
@@ -15,6 +15,6 @@ export default {
         
         const answer = number1 - number2;
                 
-        return `${number1} - ${number2} = ${answer}`
+        return `${number1} - ${number2} = **${answer}**`
     }
 } as ICommand
