@@ -13,7 +13,7 @@ There are many great Discord bots available right now, however, I couldn't find 
 ### Some Current Features
 * Welcome Message
 * Role Reaction
-* Role on Live
+* Role on Live 
 * Moderation
 * Music Player (YouTube & Spotify)
 * Many more...
