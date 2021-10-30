@@ -6,7 +6,7 @@ export default {
     description: 'Replies with pong.',
     slash: true,
     testOnly: true,
-    callback: ({}) => {
+    callback: ({ }) => {
         return 'pong'
     }
 } as ICommand
