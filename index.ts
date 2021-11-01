@@ -1,8 +1,10 @@
 import DiscordJS, { Intents } from 'discord.js'
 import WOKCommands from 'wokcommands'
 import path from 'path'
+import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 dotenv.config()
+// import 'dotenv/config'
 
 const client = new DiscordJS.Client({
     intents: [
@@ -12,16 +14,26 @@ const client = new DiscordJS.Client({
     ]
 })
 
-client.on('ready', () => {
-    console.log('Ro is online!')
-
+client.on('ready', async () => {
     new WOKCommands(client, {
-        commandDir: path.join(__dirname, 'commands'),
-        featureDir: path.join(__dirname, 'features'),
+        commandsDir: path.join(__dirname, 'commands'),
+        featuresDir: path.join(__dirname, 'features'),
         typeScript: true,
-        testServers: ['874715472736682064']
+        testServers: ['874715472736682064'],
+        botOwners: ['217509120339738624'],
+        mongoUri: process.env.MONGO_URI,
+        dbOptions: {
+            keepAlive: true
+        },
+        disabledDefaultCommands: [
+            'help',
+            'command',
+            'language',
+            'prefix',
+            'requiredrole'
+        ]
     })
-
+    console.log('Ro is online!')
 })
 
 client.login(process.env.TOKEN)

@@ -13,6 +13,7 @@
   "dependencies": {
     "discord.js": "^13.2.0",
     "dotenv": "^10.0.0",
+    "mongoose": "^6.0.12",
     "node": "^17.0.1",
     "nodemon": "^2.0.14",
     "ro": "github:AlAgilly/Ro",

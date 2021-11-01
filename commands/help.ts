@@ -13,11 +13,12 @@ export default {
                 new MessageButton()
                     .setLabel('Ro\'s Documentation')
                     .setStyle('LINK')
-                    .setURL('https://alagilly.dev/')
+                    .setURL('https://alagilly.dev/Ro')
             )
 
         msgInt.reply({
-            content: ''
+            content: 'For a full list of Ro\'s commands and features, please visit the documentation website.',
+            components: [helplink]
         })
     }
 } as ICommand
