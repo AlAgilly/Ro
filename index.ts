@@ -15,8 +15,6 @@ const client = new DiscordJS.Client({
 })
 
 client.on('ready', async () => {
-    console.log('Ro is online!')
-
     new WOKCommands(client, {
         commandsDir: path.join(__dirname, 'commands'),
         featuresDir: path.join(__dirname, 'features'),
@@ -26,9 +24,16 @@ client.on('ready', async () => {
         mongoUri: process.env.MONGO_URI,
         dbOptions: {
             keepAlive: true
-        }
+        },
+        disabledDefaultCommands: [
+            'help',
+            'command',
+            'language',
+            'prefix',
+            'requiredrole'
+        ]
     })
-
+    console.log('Ro is online!')
 })
 
 client.login(process.env.TOKEN)
