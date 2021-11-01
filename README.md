@@ -1,8 +1,8 @@
 # RoBOT
 [![DiscordInvite](https://img.shields.io/discord/473604508925034508?color=5865F2&label=Discord%20Server&logo=Discord&logoColor=white&style=for-the-badge)](https://discord.gg/mcxfJf6)
 [![Github](https://img.shields.io/github/followers/AlAgilly?label=Follow&logo=github&style=for-the-badge)](https://github.com/AlAgilly)
-[![Issues](https://img.shields.io/github/issues/AlAgilly/Ro.svg?style=for-the-badge)](https://github.com/AlAgilly/Ro/issues)
-[![MIT License](https://img.shields.io/github/license/AlAgilly/Ro.svg?style=for-the-badge)](https://github.com/AlAgilly/Ro/blob/main/LICENSE)
+[![Issues](https://img.shields.io/github/issues/AlAgilly/Ro?style=for-the-badge)](https://github.com/AlAgilly/Ro/issues)
+[![MIT License](https://img.shields.io/github/license/AlAgilly/Ro?style=for-the-badge)](https://github.com/AlAgilly/Ro/blob/main/LICENSE)
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555)](https://www.linkedin.com/in/lynnalagilly/)
 
 ## 📝 About The Project
